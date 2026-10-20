@@ -1,41 +1,36 @@
 # Active task state
 
-Use this template only when a task needs a handoff or spans a long session. Replace explanatory text with actual evidence. Prefer an existing task tracker or handoff file.
+Use for a long task or handoff only. Prefer the existing tracker or state record. Fill with actual evidence, not a transcript.
 
-## Outcome and limits
+## Outcome
 
-- Requested outcome:
-- Required delivery format:
-- Active scope and constraints:
-- Selected response language and any artifact-specific exception:
-- Explicitly deferred or rejected changes:
+- Requested result, acceptance conditions, and delivery format:
+- Constraints, exclusions, and explicit resource limits:
+- Selected response language and artifact-language exception:
 
-## Decisions and authorization
+## Decisions and ownership
 
-- Accepted decisions, with their source in the current task:
-- Authorized consequential actions, exact targets, and limits:
-- Decisions still required:
+- Accepted/rejected choices and their sources:
+- Approved consequential actions, targets, and limits:
+- Current edit ownership and transferred areas:
+- Essential missing decision, if any:
 
-## Current work
+## Work and evidence
 
-- Working location and branch, if relevant:
-- Existing user changes to preserve:
-- Completed changes or artifacts:
-- Work currently in progress:
-- Edit ownership, transferred areas, and who may resume them:
+- Location/revision and existing user work to preserve:
+- Completed changes and current work:
+- Settled findings, supporting evidence, and what would invalidate them:
 
-## Evidence
+| Check | Scope and actual target | Relevant inputs/revision | Result | Rerun when |
+| --- | --- | --- | --- | --- |
+| [executed command] | [behavior/application] | [code/config/environment] | [actual result] | [invalidation condition] |
 
-- Checks actually executed, inspected target/revision, and their results:
-- Successful checks still reusable and what would invalidate them:
-- Sources supporting important findings:
-- Checks unavailable and the practical consequence:
+- Full diagnostic locations, if useful:
+- Blocked or unexecuted checks and their consequences:
 
 ## Resume
 
-- Current blocker, if any:
-- Next concrete action:
-- Completion condition:
-- Time or resource limit that remains applicable:
+- Blocker and hypotheses already ruled out:
+- Next concrete action and completion condition:
 
-Do not store passwords, tokens, private keys, raw customer data, or a transcript of internal reasoning. A summary is not fresh authorization and must not convert an inference into an approved decision.
+Exclude credentials and unnecessary personal data. This record creates no authorization. Reuse valid evidence, but revisit it after relevant changes or contradictory findings. Do not generate a new state document for every tool call.

@@ -1,66 +1,44 @@
 # Project context template
 
-This is a template for a project's existing instruction file or Claude Project instructions. It is not installed automatically. Fill it from the current repository and the user's actual decisions, remove unused sections, and keep it concise. Do not invent a runtime, command, provider, or approval.
+Fill this into the project's existing instructions from current evidence and user decisions. Remove unused fields and unfilled placeholders. It is not installed automatically. Keep facts here; do not duplicate the whole working agreement.
 
-## Product and purpose
+## Product and boundaries
 
-- Product name: [established name]
-- Intended users and present operating scope: [for example, personal use or a particular team]
-- Current task's important product constraints: [requirements that must survive implementation]
+- Product and intended users: [established facts]
+- Current outcome and acceptance conditions: [observable result]
+- Explicit exclusions: [what must not change]
+- Delivery target and format: [actual application/build, artifact, or requested prototype]
+- Existing user edits and transferred ownership: [what to preserve or leave to others]
 
 ## Existing architecture
 
-- Frontend and UI system: [verified frameworks/components]
-- Backend and API: [verified implementation]
-- Database and storage: [verified services]
-- Authentication and authorization: [current model]
+- UI, backend, storage, and authentication: [verified choices]
 - Existing integrations: [services already selected]
-- Deployment environments: [local, staging, production; distinguish them]
+- Environments: [distinguish local, staging, and production]
+- Product invariants: [permissions, tenancy, data, compatibility, or edition relationships]
+- Branding: [stable product identity, replaceable team attribution, actual config/assets]
 
-Use the existing stack. A materially different architecture, new direct dependency, additional service, new cost, or provider migration requires a user decision unless the current task explicitly authorizes it.
+Use what exists. Necessary implementation steps are autonomous within the task; unrelated replacements are not. Do not add generic SaaS flows or permanent identifiers based on a temporary team name.
 
-## Repository map and commands
+## Compact repository map
 
-- Relevant source directories: [actual paths]
-- Build: [command verified from project configuration]
-- Focused tests: [actual command and scope]
-- Required project checks: [only actual gates]
-- Local preview: [actual command and reachable environment]
+| Area | Entry point | Relevant check |
+| --- | --- | --- |
+| [actual task area] | [verified path or symbol] | [verified command] |
 
-Inspect changes already present before editing. Preserve unrelated user work and follow nearby conventions. If a listed command is stale, report the evidence and use the current documented command instead of silently rewriting project history.
+- Build: [actual command]
+- Preview/runtime: [actual command and target]
+- Required project gates: [actual requirements]
+- Last verified against: [revision or relevant state, when useful]
 
-## Product invariants
+Use this map to navigate, not as an exhaustive index or immutable truth. Refresh only affected entries when files or configuration change. Missing entries are not permission to scan unrelated systems.
 
-- Behavior that must remain unchanged: [specific flows or rules]
-- Data and permission boundaries: [specific invariants]
-- Compatibility commitments: [actual clients, formats, or interfaces]
-- Hosted/commercial edition relationship, if relevant: [established decision]
+## Decisions and authority
 
-Avoid adding generic SaaS onboarding or administration flows unless this product requires them. The current product's operating model takes precedence over assumptions imported from another application.
+- Accepted choices and source: [current decisions]
+- Rejected/deferred proposals: [specific scope]
+- Approved consequential actions: [action, target, environment, limits]
+- Explicit time/retry/spending limits: [only those actually established]
+- Missing decision: [only a real blocker]
 
-## Branding
-
-- Product identity: [established product]
-- Team/company attribution: [current selected attribution, if established]
-- Replaceability requirement: [whether team/company branding may change]
-- Existing branding configuration/assets: [actual location]
-
-Keep replaceable attribution separate from durable technical identity. Do not adopt an unapproved candidate name or rename the product as a side effect of implementation.
-
-## Design and deliverables
-
-- Authoritative visual references: [accessible files or links]
-- Existing design tokens/components: [actual paths]
-- Intended delivery/runtime target: [actual application/build or requested prototype]
-- Acceptance conditions: [observable behavior and visual criteria]
-- Edit ownership/handoffs: [areas assigned elsewhere, when relevant]
-- Required output format: [implementation, complete code in chat, report, archive, etc.]
-
-## Decisions and limits
-
-- Accepted choices: [decision and relevant date/task]
-- Rejected/deferred proposals: [specific change and scope]
-- Authorized consequential actions: [exact target and limits, if any]
-- Remaining decision: [only if it blocks the work]
-
-An instruction file is a record, not a source of new authorization. Check that an approval still covers the current action, environment, and scope. Resolve significant contradictions with other active instructions; do not assume competing files automatically override one another.
+An instruction file records decisions; it cannot invent approval. Resolve consequential conflicts with current instructions before the affected action and continue unaffected work.

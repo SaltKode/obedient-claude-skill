@@ -1,60 +1,56 @@
 # Validation record
 
-Prepared 20 October 2026. This distinguishes executed artifact checks from model-behavior claims.
+## Focus revision — 20 October 2026
 
-## Original package checks
+The following checks were executed against the prepared focus revision, not inferred from the presence of test files.
 
-| Check | Result | What it establishes |
-| --- | --- | --- |
-| Skill-format validator | Passed | Required YAML structure and naming rules are accepted by the validator used for this package. This is not a Claude account upload test. |
-| Portable frontmatter inspection | `name` and `description` only; description is 197 characters | The package avoids Code-specific frontmatter and stays within the stricter documented description limit. |
-| Installer tests | 15 passed | The exercised preservation, backup, collision, idempotence, and failure-recovery paths work in temporary Linux directories. |
-| Installer dry-run using the actual kit | Passed; destination did not exist afterward | Planning the actual installation created no target files. |
-| Independent focused-fix exercise | One source line changed; all 4 existing tests passed; complete corrected source returned in chat | The available agent could apply the routine to a small executable task while respecting scope and format. |
-| Reference and archive checks | See the delivery check below | Linked local resources exist and the delivered archives have the intended layout. |
+| Check | Observed result |
+| --- | --- |
+| Installer and package unit tests | 26 passed locally on Linux with Python 3.14.4; 26 passed on a GitHub-hosted Ubuntu runner with Python 3.14.8. |
+| Actual-kit installation in a temporary directory | Dry-run created no destination; installation succeeded; an unchanged repeat made no content changes; the bundled license was installed. No live Claude configuration was changed. |
+| Skill structure | Portable name/description metadata accepted by the repository's narrow validator; all ten reference modules retained. |
+| Documentation and evaluations | Local file-link targets resolve; 31 unique authored case/rubric pairs have matching IDs and valid fixture paths. |
+| Upload ZIP | 14 entries match the skill source bytes, including the unchanged AGPL license; CRC and layout checks pass. |
+| Historical README cleanup | Each of the two rewritten historical trees differs from its original only in README.md, removing the requested paragraph. The initial license commit remains unchanged. |
 
-The installer tests were run with `python3 -B tools/test_install_claude.py`. They cover fresh installation, unchanged repeats, BOM/CRLF preservation, exact bytes outside the managed block, owned updates and backups, unknown skill collisions, invalid markers/encoding, missing sources, relative destinations, symlink refusal, state changes after planning, and injected backup/commit failures.
+The archive was also built and checked in [a GitHub-hosted preparation run](https://github.com/SaltKode/obedient-claude-skill/actions/runs/39380502060). That one-use job stored the validated Git blob without modifying main and removed its temporary branch. The shipped repository contains only the normal read-only [quality workflow](.github/workflows/quality.yml).
 
-All installer operations used temporary destinations. The validation checks did not modify a live user Claude configuration, account setting, repository, provider, permission mode, or subscription. Publishing this source repository is separate from installing or evaluating it in Claude.
+Archive SHA-256:
 
-## Independent task exercise
+```text
+651ccdd935989dbc9eadb997ec19224a92ef59d630aed70a457fa9c9fbeff15e
+```
 
-A fresh agent received the working agreement, the skill, a small Python invoice module, the existing four tests, and a user-style request to fix only the percentage tax calculation and return the full corrected file in chat.
+## Instruction footprint
 
-The agent changed `subtotal * tax_rate` to `subtotal * tax_rate / Decimal("100")`, preserving the rest of the source. The tests covered the reported rate, a zero rate, a fractional rate, and existing presentation behavior. The parent independently ran the same four tests and confirmed the resulting file.
+Compared with the preceding instruction-following revision:
 
-The worker was not given an evaluator rubric or a description of a suspected skill defect. It still received an explicit skill invocation, so this exercise does not measure automatic skill selection.
+| File | Previous UTF-8 bytes | Revised UTF-8 bytes |
+| --- | ---: | ---: |
+| Persistent Code agreement | 6,473 | 5,371 |
+| Skill entry point | 8,737 | 5,271 |
+| Chat preferences | 5,295 | 4,670 |
 
-**The exercise used an available GPT-family agent, not Claude.** There was no baseline without the routine and no model comparison. It is a small workflow check, not evidence of Claude effectiveness or equivalence to GPT-6.1 Sol.
+These are exact file sizes, not tokenizer measurements or end-to-end usage savings. Detailed guidance remains available on demand. The revision does not change models, effort settings, runtime permissions, or required verification.
 
-## Review findings incorporated
+## Reproducing the artifact checks
 
-The review clarified that explicit new-project stack-selection authority includes the necessary local dependencies, temporary preview servers and background tests can fit ordinary implementation scope, and retrieved material or worker reports cannot establish new user approval.
+Use Python 3.10+ from the repository root:
 
-These changes preserve autonomy while making the scope boundary more precise. They were not introduced as guaranteed technical security controls.
+```bash
+python3 -B -m unittest discover -s tools -p 'test_*.py' -v
+python3 -B tools/check_repository.py
+python3 -B tools/build_skill.py --check
+```
 
-## Practical limits
+On Windows, use `py -3` instead of `python3`. Tests use disposable directories and no model API. The validator checks this repository's metadata subset and local file targets; it does not validate external websites or Markdown heading anchors.
 
-- No live Claude session or account upload was available for validation in this task.
-- The full twenty-three-case Claude evaluation remains unrun. Use `evaluation/README.md` for a small-first comparison on the actual model and environment.
-- The later Windows installer-fixture results are recorded below. No live user configuration installation or macOS execution has been tested.
-- The installer preserves files mechanically but cannot reconcile contradictory natural-language preferences.
-- The routine cannot guarantee automatic selection, adherence, exact quality, savings, background execution, or tool access.
+The normal quality workflow runs Linux/Python 3.10 and 3.14, Windows/Python 3.14, and macOS/Python 3.14. Inspect the [Actions results](https://github.com/SaltKode/obedient-claude-skill/actions) for each published revision rather than treating a configured job as an executed pass.
 
-## Delivery check
+## Behavioral evaluation
 
-Before delivery, the package is checked for parseable evaluation JSON, existing relative Markdown links, expected skill entry points, archive integrity, and a single `work-with-me/` root in the skill-only ZIP. The general kit and skill-only ZIP contain the complete source material required for their documented use.
+The 31 scenarios are evaluation inputs, not benchmark results. Artifact tests establish installer and package properties; they do not establish Claude task quality or savings. Use [FOCUS-EVALUATION.md](evaluation/FOCUS-EVALUATION.md) for paired current-versus-revised trials with unchanged model, effort, permissions, and task inputs. Completion, correctness, scope, evidence, and delivery must remain intact before lower usage counts as an improvement.
 
-## Instruction-following revision — 20 October 2026
+## Earlier checks
 
-Updated the persistent Code/chat agreements and portable skill to preserve explicit choices, language preferences, and transferred edit ownership. Additional agents now require authorization. Repetition has bounded retries and a no-progress stopping condition, while required security and project checks remain intact. UI verification must identify the intended delivery target; a separate prototype does not verify the native application.
-
-Executed checks for this revision:
-
-- Windows installer fixtures: 15 tests run, 14 passed, one symlink test skipped because the test environment did not provide the required symlink capability. The first attempt could not use the sandbox's default temporary location; rerunning with a permitted workspace test directory succeeded. No installer source was changed and no live user configuration was touched.
-- Evaluation JSON: 23 unique cases with matching evaluator rubrics; Python fixtures in the three added cases parse successfully. These are authored cases, not Claude behavioral results.
-- The rebuilt `work-with-me.zip` passed archive integrity checking. Its 13 files match the skill source bytes exactly and use the single `work-with-me/` root.
-- Relative Markdown links resolve, the skill frontmatter is byte-for-byte unchanged from the previously validated version, and LICENSE is unchanged.
-- The bundled skill-format validator could not be rerun because PyYAML is absent from the existing interpreter. No dependency was installed. Preserving the original frontmatter does not establish live Claude skill loading or adherence.
-
-No actual Claude behavioral trial, account upload, model change, or permission change was performed. The next behavioral check is a selective run of the relevant evaluation case in the owner's authorized Claude environment.
+The original installer suite contains 15 tests covering preservation, backups, collisions, idempotence, and injected failure recovery. The previous revision's record reported 14 passes and one unavailable symlink test on Windows. A prior four-test coding exercise used a GPT-family worker, not a Claude benchmark. Current reproducible checks and per-revision CI logs take precedence over those historical observations.
