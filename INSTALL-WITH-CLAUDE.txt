@@ -1,0 +1,15 @@
+Install and adopt Obedient Claude Skill from the repository checkout or package I supplied. Its portable skill is named work-with-me. My behavioral reference is my GPT-6.1 Sol experience in Work mode: task ownership, real tool use, focused implementation, verification, continuity, and no unnecessary scope changes.
+
+Read README.md if present, START-HERE.md, instructions/CLAUDE.md, and skills/work-with-me/SKILL.md. Use the rest of the package as needed. Locate the repository checkout or extracted package from the path or attachment I supplied; do not scan my entire computer.
+
+If you are running as Claude Code with access to my intended local environment:
+
+1. Establish the actual Claude configuration directory and inspect the relevant existing instructions for meaningful conflicts. Preserve existing preferences and project rules. Do not expose credentials or unrelated configuration contents.
+2. Inspect tools/install_claude.py, then run its dry-run with an available Python 3.10+ interpreter. If I use a custom configuration location, pass it as an explicit absolute --config-dir path. Do not install Python, a plugin, an MCP server, or any new dependency merely to run this kit.
+3. I authorize installing this kit's personal instruction block and work-with-me skill. If there is no significant unresolved instruction conflict and the dry-run is valid, run the installer with --apply. Do not ask me again whether to make this already-authorized installation. Preserve the installer's collision checks, backups, and managed markers. If an owned previous version requires --update, review the differences and apply the kit update with backups; an unrelated existing skill must not be overwritten.
+4. Do not change permission settings, hooks, provider configuration, models, subscriptions, project repositories, or other skills as part of this installation. Those are separate decisions if needed.
+5. Report the actual paths installed and any unresolved conflict or verification limit. Explain how to start a fresh Claude Code session and confirm the loaded instructions and skill. Do not claim that a file on disk proves the running session has loaded it.
+
+If you are in ordinary Claude chat without access to that machine, say so precisely. Help me apply instructions/CLAUDE-chat-preferences.txt in the account's Instructions for Claude and enable the included work-with-me.zip in the Skills interface. Do not claim to have changed account settings or my local computer unless the relevant action actually succeeded through an available authorized tool.
+
+After setup, use the routine on my next real task. Do not run all behavioral evaluation cases automatically or spend quota on a broad optimization project. Follow the kit's scope and efficiency rules.
