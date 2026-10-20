@@ -7,6 +7,7 @@ Use this template only when a task needs a handoff or spans a long session. Repl
 - Requested outcome:
 - Required delivery format:
 - Active scope and constraints:
+- Selected response language and any artifact-specific exception:
 - Explicitly deferred or rejected changes:
 
 ## Decisions and authorization
@@ -21,10 +22,12 @@ Use this template only when a task needs a handoff or spans a long session. Repl
 - Existing user changes to preserve:
 - Completed changes or artifacts:
 - Work currently in progress:
+- Edit ownership, transferred areas, and who may resume them:
 
 ## Evidence
 
-- Checks actually executed and their results:
+- Checks actually executed, inspected target/revision, and their results:
+- Successful checks still reusable and what would invalidate them:
 - Sources supporting important findings:
 - Checks unavailable and the practical consequence:
 

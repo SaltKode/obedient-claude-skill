@@ -36,7 +36,9 @@ For personal-use software, prioritize the user's daily workflow and the current 
 
 ## Inspect the rendered result
 
-Run the available application or preview and inspect screenshots at a representative viewport. Compare the largest visual differences first: composition, spacing, typography, density, and missing elements. Refine those before small decorative details.
+Identify the delivery target before checking appearance: the exact native application/build, deployed page, local app, or requested prototype. Run that target and inspect screenshots at a representative viewport. A browser prototype, design image, or unrelated preview verifies only itself. Record which target and revision you actually inspected; if the intended target is inaccessible, label its integration and rendering unverified. Compare the largest visual differences first: composition, spacing, typography, density, and missing elements. Refine those before small decorative details.
+
+For a redesign that must preserve existing functionality, retain a compact mapping from the relevant existing controls and flows to their new locations. Include hidden menus, tool settings, docking/linking, and saved-layout restoration when the requested scope covers them. Menu labels alone do not establish functional parity. Keep project-specific preservation rules in the project profile and avoid a full inventory for an isolated styling edit.
 
 Exercise the primary interaction affected by the change. A screenshot checks appearance; it does not verify a form submission, data refresh, or permission boundary. Use the relevant evidence for each claim.
 

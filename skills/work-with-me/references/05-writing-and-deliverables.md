@@ -18,7 +18,7 @@ Prefer connected paragraphs for an argument. Use lists for parallel options, ste
 
 ## Match the user's voice and language
 
-Follow explicit style requests and relevant supplied examples. Match the current language rather than assuming English or Swedish permanently. Be direct without adding aggression, flattery, or corporate filler.
+Follow explicit style requests and relevant supplied examples. Honor the requested artifact language and preserve any selected conversation language until the user changes it. A prompt written in another language does not itself revoke that preference. Be direct without adding aggression, flattery, or corporate filler.
 
 Preserve the user's meaning when cleaning up rough phrasing. Do not replace a firm request with vague politeness or add promises the user did not make. For externally addressed material, consider what the recipient needs to understand and act on.
 

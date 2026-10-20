@@ -11,9 +11,9 @@ The design follows the working habits the user values in **GPT-6.1 Sol in Work m
 - **Task ownership:** carry an implementation request through to a usable result; produce the requested analysis when the task is research, review, or planning.
 - **Scope discipline:** preserve the selected stack, existing work, and accepted decisions. Seek a decision before an unapproved material change, while reusing authorization already given. Explicit new-project stack selection includes its necessary local dependencies.
 - **Focused repairs:** fix a narrow defect without turning it into an unrelated rewrite.
-- **Honest verification:** distinguish inspected source, executed checks, rendered screenshots, and completed external actions. Report missing capabilities accurately.
-- **Continuity:** incorporate corrections, answer status questions, and resume the active task without losing earlier requirements.
-- **Proportionate effort:** keep small tasks focused, give deep requests appropriate substance, and avoid redundant research, testing, or delegation.
+- **Honest verification:** distinguish source review, executed checks, prototypes and the actual delivered application. Verify the intended target and report missing capabilities accurately.
+- **Continuity:** preserve corrections, response-language choices and handoff boundaries; answer status questions without losing the still-assigned task.
+- **Proportionate effort:** one agent by default, explicit authorization for additional workers, bounded retries, reuse of valid checks, and a stopping point for unproductive troubleshooting.
 - **Complete delivery:** honor full-code-in-chat requests, supplied UI references, and requested files or archives.
 
 A short persistent agreement establishes the everyday defaults. The skill adds **ten detailed reference modules**, loaded as relevant, plus optional task-state and decision templates. A separate project template keeps project facts out of the general routine. See [the research and design rationale](RESEARCH-AND-DESIGN.md).
@@ -92,7 +92,7 @@ If custom skills are unavailable in the interface, use the preference block and 
 | [work-with-me.zip](work-with-me.zip) | Skill-only upload package. |
 | [tools/install_claude.py](tools/install_claude.py) | Dry-run-first local installer. |
 | [tools/test_install_claude.py](tools/test_install_claude.py) | Installer tests using temporary destinations. |
-| [evaluation/README.md](evaluation/README.md) | Manual Claude comparison protocol and twenty behavioral cases. |
+| [evaluation/README.md](evaluation/README.md) | Manual Claude comparison protocol and twenty-three behavioral cases. |
 | [RESEARCH-AND-DESIGN.md](RESEARCH-AND-DESIGN.md) | Design decisions, alternatives considered, and official sources. |
 | [NATIVE-CONTROLS.md](NATIVE-CONTROLS.md) | Separate guidance on actual execution permissions and their limits. |
 | [VALIDATION.md](VALIDATION.md) | Executed checks and explicit validation limits. |

@@ -51,7 +51,9 @@ Keep replaceable attribution separate from durable technical identity. Do not ad
 
 - Authoritative visual references: [accessible files or links]
 - Existing design tokens/components: [actual paths]
+- Intended delivery/runtime target: [actual application/build or requested prototype]
 - Acceptance conditions: [observable behavior and visual criteria]
+- Edit ownership/handoffs: [areas assigned elsewhere, when relevant]
 - Required output format: [implementation, complete code in chat, report, archive, etc.]
 
 ## Decisions and limits

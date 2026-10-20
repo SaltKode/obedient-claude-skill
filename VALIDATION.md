@@ -2,7 +2,7 @@
 
 Prepared 20 October 2026. This distinguishes executed artifact checks from model-behavior claims.
 
-## Executed checks
+## Original package checks
 
 | Check | Result | What it establishes |
 | --- | --- | --- |
@@ -36,11 +36,25 @@ These changes preserve autonomy while making the scope boundary more precise. Th
 ## Practical limits
 
 - No live Claude session or account upload was available for validation in this task.
-- The full twenty-case Claude evaluation remains unrun. Use `evaluation/README.md` for a small-first comparison on the actual model and environment.
-- Native Windows and macOS runtime execution were not tested here. The installer uses Python standard-library APIs and includes Windows reparse-point checks; that is implementation intent, not platform verification.
+- The full twenty-three-case Claude evaluation remains unrun. Use `evaluation/README.md` for a small-first comparison on the actual model and environment.
+- The later Windows installer-fixture results are recorded below. No live user configuration installation or macOS execution has been tested.
 - The installer preserves files mechanically but cannot reconcile contradictory natural-language preferences.
 - The routine cannot guarantee automatic selection, adherence, exact quality, savings, background execution, or tool access.
 
 ## Delivery check
 
 Before delivery, the package is checked for parseable evaluation JSON, existing relative Markdown links, expected skill entry points, archive integrity, and a single `work-with-me/` root in the skill-only ZIP. The general kit and skill-only ZIP contain the complete source material required for their documented use.
+
+## Instruction-following revision — 20 October 2026
+
+Updated the persistent Code/chat agreements and portable skill to preserve explicit choices, language preferences, and transferred edit ownership. Additional agents now require authorization. Repetition has bounded retries and a no-progress stopping condition, while required security and project checks remain intact. UI verification must identify the intended delivery target; a separate prototype does not verify the native application.
+
+Executed checks for this revision:
+
+- Windows installer fixtures: 15 tests run, 14 passed, one symlink test skipped because the test environment did not provide the required symlink capability. The first attempt could not use the sandbox's default temporary location; rerunning with a permitted workspace test directory succeeded. No installer source was changed and no live user configuration was touched.
+- Evaluation JSON: 23 unique cases with matching evaluator rubrics; Python fixtures in the three added cases parse successfully. These are authored cases, not Claude behavioral results.
+- The rebuilt `work-with-me.zip` passed archive integrity checking. Its 13 files match the skill source bytes exactly and use the single `work-with-me/` root.
+- Relative Markdown links resolve, the skill frontmatter is byte-for-byte unchanged from the previously validated version, and LICENSE is unchanged.
+- The bundled skill-format validator could not be rerun because PyYAML is absent from the existing interpreter. No dependency was installed. Preserving the original frontmatter does not establish live Claude skill loading or adherence.
+
+No actual Claude behavioral trial, account upload, model change, or permission change was performed. The next behavioral check is a selective run of the relevant evaluation case in the owner's authorized Claude environment.

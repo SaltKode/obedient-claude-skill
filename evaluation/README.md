@@ -6,7 +6,7 @@ The target is the observable workflow the user values in **GPT-6.1 Sol in Work m
 
 ## Contents and boundaries
 
-- `cases.json`: 20 self-contained task specifications under `cases`, with evaluator-only criteria separately under `rubrics`.
+- `cases.json`: 23 self-contained task specifications under `cases`, with evaluator-only criteria separately under `rubrics`.
 - This README: operator instructions and a blank scorecard.
 
 The files do not run an API, alter Claude settings, install the kit, or report passing behavioral tests. Use the supplied installation procedure separately if you decide to install the kit.
@@ -15,7 +15,7 @@ The files do not run an API, alter Claude settings, install the kit, or report p
 
 Start with **C02 (targeted repair), C04 (existing subsystem), and C13 (honest verification)**. These address the user's most consequential failure examples without requiring the entire suite. Run one comparable baseline/treatment pair for each. Expand only to resolve an uncertainty or assess a behavior that matters to the intended workflow; C07 adds continuity and C19/C20 probe opposite sides of the authorization boundary.
 
-Cases involving full artifacts or live research cost more. Do not run all 20 repeatedly by default. Record observed differences descriptively; a few trials do not establish a numerical effectiveness claim.
+Cases involving full artifacts or live research cost more. For the instruction-following revision, C09 checks unapproved delegation and C21–C23 cover language persistence, edit handoffs, and the native-app/prototype boundary. Run the relevant case selectively. Do not run all 23 repeatedly by default. Record observed differences descriptively; a few trials do not establish a numerical effectiveness claim.
 
 ## Control the comparison
 

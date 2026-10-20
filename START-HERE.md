@@ -70,7 +70,7 @@ python3 tools/install_claude.py --apply --update
 
 Use the appropriate interpreter for Windows as above. Updates replace only this kit's owned instruction section and owned skill, with backups. A skill with the same name that was not installed by this installer is refused even with `--update`; inspect that collision instead of overwriting it.
 
-The installer is intended for a single run while no other process edits those targets. Close or pause concurrent edits during installation. Native Windows execution was not tested in this Linux session, although the code includes Windows reparse-point checks.
+The installer is intended for a single run while no other process edits those targets. Close or pause concurrent edits during installation. The original preparation used Linux; the later instruction-following revision exercised the temporary installer fixtures on Windows. See [VALIDATION.md](VALIDATION.md) for the results and limits. No live Claude configuration was installed during those checks.
 
 ### Confirm loading
 
@@ -115,7 +115,7 @@ For each project, adapt `instructions/PROJECT.template.md` to actual current fac
 | `work-with-me.zip` | Skill-only upload package. |
 | `INSTALL-WITH-CLAUDE.txt` | Prompt that asks Claude Code to perform the installation. |
 | `tools/` | Installer and its isolated tests. |
-| `evaluation/` | Twenty behavioral cases and a small-first comparison protocol. |
+| `evaluation/` | Twenty-three behavioral cases and a small-first comparison protocol. |
 | `RESEARCH-AND-DESIGN.md` | Research findings, sources, decisions, and limits. |
 | `NATIVE-CONTROLS.md` | Optional execution-permission guidance. |
 | `VALIDATION.md` | What was actually checked before delivery. |
