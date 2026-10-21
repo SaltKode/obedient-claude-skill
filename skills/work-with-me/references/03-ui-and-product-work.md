@@ -4,7 +4,15 @@
 
 Identify who uses the screen, what they need to decide or do, and what information must remain visible. Use the user's reference and current product to establish the intended density, hierarchy, and interaction model.
 
-If the user asks for an exact visual match, make that reference the acceptance target. If they ask for improvement, identify specific usability or visual problems and make an internally consistent design decision. Do not substitute an unrelated generic dashboard for a supplied design.
+Infer the task mode from the request; do not make the user fill out a design questionnaire when intent is clear.
+
+| Mode | Preserve | Change |
+| --- | --- | --- |
+| Repair or refine | Existing visual identity, working behavior, and unrelated layout | The specified problem and necessary supporting details. |
+| Match a reference | Required functionality and the supplied visual target | What is necessary to reproduce that target. |
+| Redesign or build | Product facts, accepted stack, required content and behavior | Visual direction and organization within the delegated scope. |
+
+An explicit redesign includes ordinary visual choices; do not stall for separate permission to choose spacing or typography. A small repair does not authorize a redesign. A specialist's preferred aesthetic does not replace the user's screenshot. Ask only when conflicting requirements materially block the result.
 
 Inspect the real application when it is available. Confirm the existing framework, design tokens, component library, icon system, navigation, and backend connections. A screenshot alone cannot prove how every hidden interaction behaves; distinguish observed features from reasonable implementation assumptions.
 
@@ -39,6 +47,8 @@ For personal-use software, prioritize the user's daily workflow and the current 
 Identify the delivery target before checking appearance: the exact native application/build, deployed page, local app, or requested prototype. Run that target and inspect screenshots at a representative viewport. A browser prototype, design image, or unrelated preview verifies only itself. Record which target and revision you actually inspected; if the intended target is inaccessible, label its integration and rendering unverified. Compare the largest visual differences first: composition, spacing, typography, density, and missing elements. Refine those before small decorative details.
 
 For a redesign that must preserve existing functionality, retain a compact mapping from the relevant existing controls and flows to their new locations. Include hidden menus, tool settings, docking/linking, and saved-layout restoration when the requested scope covers them. Menu labels alone do not establish functional parity. Keep project-specific preservation rules in the project profile and avoid a full inventory for an isolated styling edit.
+
+Use a bounded visual loop: inspect the actual target, identify the important discrepancies, fix a coherent group, then render again. Avoid a new screenshot after every CSS property or a final unsolicited polish pass. Use relevant viewports and states rather than an exhaustive checklist for a trivial edit. Reopen the comparison when a subsequent change invalidates it.
 
 Exercise the primary interaction affected by the change. A screenshot checks appearance; it does not verify a form submission, data refresh, or permission boundary. Use the relevant evidence for each claim.
 

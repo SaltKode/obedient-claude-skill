@@ -18,6 +18,7 @@ Use for a long task or handoff only. Prefer the existing tracker or state record
 ## Work and evidence
 
 - Location/revision and existing user work to preserve:
+- Authoritative plan, issue, diff/commit, source, and log references (do not duplicate their contents):
 - Completed changes and current work:
 - Settled findings, supporting evidence, and what would invalidate them:
 

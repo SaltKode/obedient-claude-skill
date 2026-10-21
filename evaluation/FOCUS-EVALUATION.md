@@ -44,3 +44,7 @@ Look for fewer irrelevant edits, redundant reads, invalid retries, unnecessary m
 Describe observed per-case outcomes and variability. For broader claims, expand to held-out tasks and repeated trials with a predeclared quality threshold. Do not claim guaranteed quality parity or a universal savings percentage. Change the smallest relevant rule when a concrete failure appears, then test a nearby variation rather than optimizing solely for these literal prompts.
 
 The offline Python tests and CI validate package mechanics. They do not invoke Claude or establish model-level effectiveness.
+
+## Comparison-informed extension
+
+Six [comparison cases](comparison-cases.json) cover exact bug verification, specialist conflicts, appropriate UI scope, and lightweight handoffs. Eight [activation probes](activation-cases.json) assess selection separately from task quality. Use [TRIALS.md](TRIALS.md) for the optional sequential runner; unsupported multi-turn/image cases still use the manual protocol. The default runner action only prints a plan. Never run paid trials from ordinary CI.

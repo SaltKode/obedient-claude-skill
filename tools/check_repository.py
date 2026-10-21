@@ -18,7 +18,11 @@ BUDGETS = {
 }
 
 
-def check_frontmatter(text: str) -> None:
+DESCRIPTION_SPEC_LIMIT = 1024
+DESCRIPTION_REVIEW_LENGTH = 360
+
+
+def check_frontmatter(text: str) -> str:
     lines = text.splitlines()
     if not lines or lines[0] != "---":
         raise ValueError("SKILL.md needs opening frontmatter")
@@ -35,15 +39,22 @@ def check_frontmatter(text: str) -> None:
     if set(fields) != {"name", "description"} or fields["name"] != "work-with-me":
         raise ValueError("Portable metadata must contain only name and description")
     description = json.loads(fields["description"])
-    if not isinstance(description, str) or not 1 <= len(description) <= 200:
-        raise ValueError("Keep the description a quoted string of 1–200 characters")
+    if not isinstance(description, str) or not description.strip() or len(description) > DESCRIPTION_SPEC_LIMIT:
+        raise ValueError("Description must be a nonempty quoted string of at most 1024 characters")
     if not "\n".join(lines[end + 1:]).strip():
         raise ValueError("Missing skill body")
+    return description
 
 
 def safe_fixture_path(name: str) -> bool:
-    path = PurePosixPath(name)
-    return bool(name) and not path.is_absolute() and ".." not in path.parts and "\\" not in name and ":" not in name
+    if not isinstance(name, str) or not name or any(char in name for char in "\\:\0\r\n"):
+        return False
+    parts = name.split("/")
+    reserved = {"con", "prn", "aux", "nul", *(f"com{i}" for i in range(1, 10)), *(f"lpt{i}" for i in range(1, 10))}
+    return not PurePosixPath(name).is_absolute() and all(
+        part not in {"", ".", ".."} and not part.endswith((" ", "."))
+        and part.split(".")[0].casefold() not in reserved for part in parts
+    )
 
 
 def check_cases(data: dict) -> set[str]:
@@ -91,10 +102,12 @@ def check_budgets(root: Path) -> dict[str, int]:
 
 
 def validate(root: Path) -> None:
-    check_frontmatter((root / "skills/work-with-me/SKILL.md").read_text(encoding="utf-8"))
+    description = check_frontmatter((root / "skills/work-with-me/SKILL.md").read_text(encoding="utf-8"))
+    if len(description) > DESCRIPTION_REVIEW_LENGTH:
+        print("REVIEW: description exceeds the editorial length target; valid metadata is not proof of good activation.")
     sizes = check_budgets(root)
     ids = set()
-    for name in ("cases.json", "focus-cases.json"):
+    for name in ("cases.json", "focus-cases.json", "comparison-cases.json", "activation-cases.json"):
         found = check_cases(json.loads((root / "evaluation" / name).read_text(encoding="utf-8")))
         if ids.intersection(found):
             raise ValueError("Duplicate case IDs across evaluation suites")

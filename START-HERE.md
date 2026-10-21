@@ -76,3 +76,7 @@ For chat, edit the copied preferences and disable/remove the uploaded skill thro
 ## Evaluate without wasting usage
 
 Start with a real task that previously failed. Check completion, scope, honest verification, and unnecessary permission questions—not whether Claude promises to follow instructions. Use the [focus comparison protocol](evaluation/FOCUS-EVALUATION.md) for current-versus-revised testing. Authored cases are not measured performance results. Do not run the entire suite or change model settings automatically.
+
+## Optional project-local ecosystem installation
+
+The [skills CLI path](docs/ECOSYSTEM-INSTALL.md) installs only the portable skill, not the standing agreement. Do not mix managers at one destination. The normal full installer and ZIP remain available without Node.js.

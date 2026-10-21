@@ -43,3 +43,7 @@ Keep the compact Code/chat agreements semantically aligned and preserve owner-sp
 - [SLSA provenance requirements and builders](https://slsa.dev/how-to/get-started).
 
 Product interfaces change. Check the relevant official documentation when updating installation or workflow mechanics instead of hardcoding assumptions about a model name or price.
+
+## Comparison-informed revision
+
+See [the design changes](COMPARISON-IMPROVEMENTS.md) and [optional trial runner](../evaluation/TRIALS.md). The runner and its fake-process unit tests are developer tools, excluded from the installed skill. Metadata validation follows the 1,024-character specification separately from a 360-character editorial review warning; the current description stays unchanged until activation evidence justifies a change. The optional [skills CLI path](ECOSYSTEM-INSTALL.md) is tested separately and is not an npm dependency of the package or CI.

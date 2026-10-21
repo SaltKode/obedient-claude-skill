@@ -82,7 +82,10 @@ class PackageTests(unittest.TestCase):
 
     def test_long_description_is_rejected(self):
         with self.assertRaises(ValueError):
-            check_frontmatter(HEADER.replace("A focused working routine.", "x" * 201))
+            check_frontmatter(HEADER.replace("A focused working routine.", "x" * 1025))
+        check_frontmatter(HEADER.replace("A focused working routine.", "x" * 1024))
+        with self.assertRaises(ValueError):
+            check_frontmatter(HEADER.replace("A focused working routine.", "   "))
 
     def test_links_reject_missing_or_escaping_targets(self):
         readme = self.root / "README.md"

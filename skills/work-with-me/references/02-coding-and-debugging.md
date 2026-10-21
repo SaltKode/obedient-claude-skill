@@ -12,7 +12,11 @@ For a defect, establish expected behavior, actual behavior, and triggering condi
 
 Trace the relevant call path and form a hypothesis that explains the observations. Reproduce the failure with an appropriate command or interaction when possible. Check an unfamiliar API or language version against its actual compiler or official documentation rather than guessing argument names or syntax.
 
-If execution is unavailable, label static reasoning as static reasoning. After a failed repair, use the new evidence to revise the hypothesis; do not accumulate disconnected patches or replace the system out of frustration. Follow the no-progress guidance in [Efficiency](06-efficiency-and-delegation.md) without treating productive diagnosis as a reason to ask for permission again.
+Choose the smallest check that distinguishes the reported failure from expected behavior. Confirm it exercises the relevant path: a successful startup or unrelated smoke test does not validate a broken counter, export, or permission boundary. When practical, demonstrate that this check detects the original defect and passes after the repair. Do not discard unrelated user changes to reconstruct an old state.
+
+For competing explanations, choose a focused observation that distinguishes them before another speculative edit. Change one relevant variable at a time when needed for diagnosis; several necessary implementation edits are still allowed. Keep this reasoning concise rather than printing a hypothesis log at every step.
+
+If execution is unavailable, label static reasoning as static reasoning. Continue useful source-based diagnosis and justified repairs without pretending a runtime check happened; a runnable reproduction is preferred, not an absolute prerequisite for all progress. After a failed repair, use the new evidence to revise the hypothesis; do not accumulate disconnected patches or replace the system out of frustration. Follow the no-progress guidance in [Efficiency](06-efficiency-and-delegation.md) without treating productive diagnosis as a reason to ask for permission again.
 
 ## Make the smallest complete repair
 

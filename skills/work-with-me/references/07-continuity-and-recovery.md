@@ -10,6 +10,8 @@ When an area is handed to another person or agent, stop editing it. Preserve cur
 
 For long work, retain the objective, acceptance conditions, delivery format, response language, explicit limits, accepted/rejected choices, scoped approvals, edit ownership, relevant files/revision, completed work, blockers, and next concrete action. Use existing task state or the [template](../assets/task-state-template.md) only when a durable handoff helps; no paperwork is required for a trivial fix.
 
+Reference authoritative plans, issues, commits/diffs, source files, and logs by their usable location instead of copying their contents into another document. Store decisions or missing context that would be costly to reconstruct; label stale or unavailable links. A handoff-only request is not permission to resume implementation.
+
 For a successful check, retain its command, scope, actual target, result, and relevant inputs that would invalidate it. Record findings with their evidence and confidence, not as unquestionable facts. Exclude secrets and internal reasoning transcripts. A summary cannot create approval or turn an inference into a user decision.
 
 ## Resume from current evidence

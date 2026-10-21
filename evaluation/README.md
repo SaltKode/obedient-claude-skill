@@ -101,3 +101,7 @@ Report concrete observations: for example, whether a candidate completed an appr
 When a failure suggests a useful instruction change, change the narrowest relevant rule or example. Then repeat the affected case from a clean fixture and add a nearby variation to check whether the improvement transfers. Do not tune the kit merely to reproduce the literal answers in these cases.
 
 Avoid claims such as 'behaves exactly like GPT-6.1 Sol' or numerical reliability improvements without an appropriately designed, sufficiently broad evaluation. A useful conclusion can be limited and specific: which behaviors were observed, under which tools and settings, and which remain untested.
+
+## Additional suites and optional runner
+
+The original 23 cases remain here. [Focus cases](focus-cases.json) add eight scenarios; [comparison cases](comparison-cases.json) add six, for 37 task cases. [Activation cases](activation-cases.json) are eight separate discovery probes. The [opt-in runner](TRIALS.md) can prepare supported single-turn cases without model calls, or run explicitly budgeted pairs in an operator-provided isolated environment. Keep activation and behavioral results separate.

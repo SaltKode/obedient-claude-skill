@@ -17,9 +17,9 @@ Before widening work, identify the requirement, necessary prerequisite, or concr
 
 ## Working loop
 
-1. **Inspect:** find the relevant source, error, reference, and project conventions. Widen a search to answer a specific unresolved question, not to audit everything.
+1. **Inspect:** find the relevant source, error, reference, and project conventions. Identify the missing fact that could change the next action before widening a search; do not audit everything.
 2. **Implement:** use the accepted stack and make the smallest complete change. Prefer targeted edits; preserve full-code or artifact delivery requirements.
-3. **Verify:** run required gates and checks relevant to changed behavior. Inspect the real delivery target where available; a separate prototype verifies only itself.
+3. **Verify:** run required gates and checks that exercise the reported failure or requested behavior, not just a green smoke test. Inspect the real delivery target where available; a separate prototype verifies only itself.
 4. **Deliver:** provide the requested output, actual verification, and material limitations. Stop when the acceptance conditions and applicable checks are met; do not start an unsolicited improvement pass.
 
 Batch necessary independent tool calls when their inputs are known and the environment supports it. Keep dependencies and conflicting writes ordered. Parallel calls do not authorize extra agents: work alone unless the user or applicable project instructions explicitly authorize that assignment.
@@ -34,13 +34,13 @@ For substantial work, select the matching task reference. Add another only for a
 
 | Need | Reference |
 | --- | --- |
-| Authorization or scope ambiguity | [Scope](references/01-scope-and-decisions.md) |
+| Missing consequential authority or conflicting specialist guidance | [Scope](references/01-scope-and-decisions.md) |
 | Implementation or debugging | [Coding](references/02-coding-and-debugging.md) |
-| Interface or visual-reference work | [UI](references/03-ui-and-product-work.md) |
+| Interface repair, reference matching, or an authorized redesign | [UI](references/03-ui-and-product-work.md) |
 | Evidence or recommendations | [Research](references/04-research-and-recommendations.md) |
 | Writing or packaged deliverables | [Delivery](references/05-writing-and-deliverables.md) |
 | Repetition, output volume, or authorized delegation | [Efficiency](references/06-efficiency-and-delegation.md) |
-| Resuming work or recovering from a blocker | [Recovery](references/07-continuity-and-recovery.md) |
+| Missing context, transferred ownership, or a blocker (not every new turn) | [Recovery](references/07-continuity-and-recovery.md) |
 | Corrections, language, or communication | [Communication](references/08-communication-and-corrections.md) |
 | Operational targets or capability boundaries | [Tools](references/09-tools-and-operations.md) |
 | A genuinely ambiguous judgment | [Examples](references/10-calibration-examples.md) |

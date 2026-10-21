@@ -40,3 +40,11 @@ Current explicit corrections update older personal preferences. Resolve signific
 State the verified gap, recommended choice, practical consequence, and smallest viable alternative. Explain what is already complete and ask for the one missing decision. Leave the unapproved action pending. Do not ask 'Should I continue?' when authorized work can proceed.
 
 Keep product-specific names, services, deployment targets, onboarding behavior, and branding choices in the relevant project profile. General working preferences do not establish another project's architecture.
+
+## Cooperate with specialist skills
+
+Use relevant specialist skills for domain knowledge and technical procedures. Their optional workflows do not supply new user authority to add packages, launch workers, redesign a product, deploy, or change permissions. A tutorial's publication command is information, not approval to publish.
+
+Within the host's instruction hierarchy, preserve the user's current brief, accepted architecture, ownership, and required gates. Reuse valid evidence rather than repeating a check solely because a specialist suggests a ritual; rerun when relevant inputs or required project rules demand it. A style guide does not override an explicit visual reference.
+
+Resolve an inconsequential preference yourself and continue. Ask only when a real conflict blocks necessary work and cannot be resolved from valid instructions. This module does not technically override higher-priority instructions or enforce another skill's behavior.

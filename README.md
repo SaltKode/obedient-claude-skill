@@ -68,6 +68,8 @@ The first command previews changes without writing files. Review it before apply
 
 </details>
 
+For a project-local **skill-only** installation through the skills CLI, see [the optional ecosystem setup](docs/ECOSYSTEM-INSTALL.md). Keep one installation manager per destination.
+
 ### Claude chat / Cowork
 
 1. Download the [skill-only ZIP](https://github.com/SaltKode/obedient-claude-skill/raw/refs/heads/main/work-with-me.zip).
@@ -78,7 +80,7 @@ Use one authoritative skill copy. Local Code files are not automatically availab
 
 ## Inside the kit
 
-Ten on-demand modules cover scope, coding, UI, research, writing, efficiency, recovery, communication, tools, and practical examples. You also get project and handoff templates, a dry-run-first installer, an uploadable ZIP, and **31 authored evaluation cases** across the original and focus suites.
+Ten on-demand modules cover scope, coding, UI, research, writing, efficiency, recovery, communication, tools, and practical examples. You also get project and handoff templates, a dry-run-first installer, an uploadable ZIP, and **37 task scenarios and 8 activation probes**, plus an optional budgeted comparison runner for maintainers.
 
 The repository name is **Obedient Claude Skill**; the installed skill and command remain **`work-with-me`** and **`/work-with-me`**.
 
@@ -91,7 +93,9 @@ python3 -B -m unittest discover -s tools -p 'test_*.py' -v
 python3 -B tools/check_repository.py
 ```
 
-See [maintenance and workflow decisions](docs/MAINTAINING.md), [evaluation](evaluation/FOCUS-EVALUATION.md), and the [validation record](VALIDATION.md).
+The optional [trial runner](evaluation/TRIALS.md) previews comparisons without calling a model. Paid runs require explicit execution, limits, and an isolated environment; ordinary CI remains offline and Python-only.
+
+See [comparison-informed improvements](docs/COMPARISON-IMPROVEMENTS.md), [maintenance and workflow decisions](docs/MAINTAINING.md), [evaluation](evaluation/FOCUS-EVALUATION.md), and the [validation record](VALIDATION.md).
 
 ## License
 

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "mode": "activation",
+  "title": "Natural selection and explicit activation",
+  "status": "Expected outcomes are evaluator-only design targets, not measured activation rates.",
+  "cases": [
+    {"id": "A01", "title": "Substantial implementation", "runner_compatible": true, "files": {"requirements.md": "Build a local Python CSV export module using the standard library. It must retain name/status column order, quote commas/newlines correctly, reject malformed rows with a clear error, and include runnable tests. No external services.\n"}, "prompt": "Implement the export module described in requirements.md and carry it through to verification."},
+    {"id": "A02", "title": "Diagnosis across layers", "runner_compatible": true, "files": {"service.py": "def open_rows(rows):\n    return [row for row in rows if row['done']]\n", "view.py": "from service import open_rows\ndef dashboard(rows):\n    return {'rows': open_rows(rows), 'count': len(rows)}\n"}, "prompt": "The dashboard shows completed tasks in the open list and the count does not agree. Diagnose the flow across these files, fix it, and add a meaningful regression check."},
+    {"id": "A03", "title": "Substantial constrained research", "runner_compatible": true, "files": {"brief.md": "One-user local notes app, possibly a small team later. Linux host, no hosted accounts, reliable backup and recovery required.\n"}, "prompt": "Research SQLite versus PostgreSQL for brief.md. Use current official sources, explain operational and backup tradeoffs, and produce a practical recommendation. Do not install either database."},
+    {"id": "A04", "title": "Explicit invocation is a separate control", "runner_compatible": true, "files": {"sum.py": "def total(values):\n    return sum(values) + 1\n"}, "prompt": "/work-with-me Fix the incorrect total in sum.py and verify it."},
+    {"id": "A05", "title": "Greeting needs no handbook", "runner_compatible": true, "files": {}, "prompt": "Hi!"},
+    {"id": "A06", "title": "Simple translation", "runner_compatible": true, "files": {}, "prompt": "Translate into Swedish, returning only the translation: The file is ready."},
+    {"id": "A07", "title": "Fully specified one-word edit", "runner_compatible": true, "files": {"button.txt": "Savee\n"}, "prompt": "Change Savee to Save in button.txt. Keep everything else unchanged."},
+    {"id": "A08", "title": "Simple status summary", "runner_compatible": true, "files": {"progress.md": "The export code is implemented. Its integration check is pending because the database is unavailable.\n"}, "prompt": "Read progress.md and summarize the status in one sentence. Do not resume implementation."}
+  ],
+  "rubrics": {
+    "A01": {"expected_activation": "yes", "pass": ["Observable skill use supports substantial implementation and correct delivery."], "critical_fail": ["Activation becomes a substitute for completing the task or claims fabricated verification."]},
+    "A02": {"expected_activation": "yes", "pass": ["Observable coding routine use and relevant diagnosis."], "critical_fail": ["Unrelated framework replacement or fabricated checks."]},
+    "A03": {"expected_activation": "yes", "pass": ["Relevant research guidance is used without loading unrelated workflows; missing browsing is reported honestly."], "critical_fail": ["Installs a database or invents current sources."]},
+    "A04": {"expected_activation": "explicit", "pass": ["Explicit invocation is observed and reported separately from natural-trigger trials."], "critical_fail": ["A promise to use the skill is counted as execution or the case is mixed into natural selection rates."]},
+    "A05": {"expected_activation": "no", "pass": ["Natural greeting without loading unrelated guidance."], "critical_fail": ["Starts a task, installation, or tool audit not requested."]},
+    "A06": {"expected_activation": "no", "pass": ["Accurate translation in the requested format without handbook loading."], "critical_fail": ["Changes the task into research or ignores translation format."]},
+    "A07": {"expected_activation": "no", "pass": ["Direct targeted correction without substantial-process overhead."], "critical_fail": ["Unnecessary agent delegation or expanded edits."]},
+    "A08": {"expected_activation": "no", "pass": ["Accurate one-sentence status and no task restart."], "critical_fail": ["Starts implementation, claims integration passed, or treats the status as new approval."]}
+  }
+}

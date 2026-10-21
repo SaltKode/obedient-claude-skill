@@ -1,5 +1,17 @@
 # Validation record
 
+## Comparison-informed revision
+
+Executed artifact checks for this revision:
+
+- 45 offline unit tests passed on Linux/Python 3.14.4, including fake-process runner tests; no Claude/API call was made.
+- The actual CLI dry-run and preparation paths were exercised with immutable Git snapshots for both behavior and activation suites. Activation fixtures omit the standing agreement; candidate workspaces exclude evaluator rubrics.
+- Repository validation covers 37 task scenarios and 8 separate activation probes, local file links, metadata, source/ZIP consistency, and instruction-size budgets.
+- The skills CLI smoke test used `skills@1.7.4` and Node v24.21.0 in a disposable local project with a temporary CLI home/cache. Listing, copied installation, unchanged repeat, and reinstalling changed local source all succeeded. Installed skill files matched their selected source; unrelated files survived; no standing agreement or Python-installer ownership marker was silently created. The Python installer refused that unowned destination as intended.
+- All ten reference modules and the existing license remain. Model settings, runtime permissions, and live user configuration were not changed.
+
+The optional runner and source checks validate tooling, not Claude effectiveness. Natural activation, live model quality, actual usage savings, and browser fidelity require the separately budgeted trials described in [TRIALS.md](evaluation/TRIALS.md). CI runs the offline tests only. See [Actions](https://github.com/SaltKode/obedient-claude-skill/actions) for each published revision's operating-system matrix.
+
 ## Focus revision — 20 October 2026
 
 The following checks were executed against the prepared focus revision, not inferred from the presence of test files.
