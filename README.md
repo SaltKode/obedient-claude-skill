@@ -6,6 +6,14 @@ A practical workflow for Claude that keeps coding, research, design, and writing
 
 Claude should make normal technical decisions, use its tools, and finish the job—not ask permission for every edit or invent an unrelated project along the way.
 
+## Latest update
+
+**21 October 2026 — CodeQL test-fixture fix**
+
+Addressed the clear-text-storage finding in `tools/test_install_claude.py`: the fixture now clearly identifies its content as public, synthetic test data—not real credentials. Strengthened checks confirm that file contents are not echoed to either output stream when installation fails, and that the original file remains unchanged. All **45 offline tests passed**, and the follow-up CodeQL analysis completed successfully. Installer behavior and security-scanning rules are unchanged.
+
+[Fix and patch](https://github.com/SaltKode/obedient-claude-skill/commit/6c5ca74c89b2873714115d699df6cca047f3001d) · [Quality checks](https://github.com/SaltKode/obedient-claude-skill/actions/runs/39533629370) · [CodeQL analysis](https://github.com/SaltKode/obedient-claude-skill/actions/runs/39533629133)
+
 ## 🎯 What it improves
 
 | Benefit | How the skill guides Claude |
