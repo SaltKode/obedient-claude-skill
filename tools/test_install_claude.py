@@ -242,14 +242,19 @@ class InstallerTests(unittest.TestCase):
 
     def test_cli_errors_are_nonzero_and_do_not_echo_file_content(self):
         self.config.mkdir(parents=True)
-        secret = b"unrelated private text " + installer.BEGIN
-        (self.config / "CLAUDE.md").write_bytes(secret)
+        # Public test-only content, not a credential or user data. The missing
+        # END marker deliberately exercises an error without echoing the body.
+        fixture_marker = "test-only file body must not be echoed"
+        malformed_content = fixture_marker.encode("ascii") + b" " + installer.BEGIN
+        (self.config / "CLAUDE.md").write_bytes(malformed_content)
         stdout, stderr = io.StringIO(), io.StringIO()
         with redirect_stdout(stdout), redirect_stderr(stderr):
             result = installer.main(["--config-dir", str(self.config), "--apply"], kit_dir=self.kit)
         self.assertEqual(result, 1)
-        self.assertNotIn("private text", stdout.getvalue() + stderr.getvalue())
-        self.assertEqual((self.config / "CLAUDE.md").read_bytes(), secret)
+        self.assertIn("ERROR:", stderr.getvalue())
+        self.assertNotIn(fixture_marker, stdout.getvalue())
+        self.assertNotIn(fixture_marker, stderr.getvalue())
+        self.assertEqual((self.config / "CLAUDE.md").read_bytes(), malformed_content)
 
 
 if __name__ == "__main__":
